@@ -5,6 +5,10 @@ if v:progname =~? "evim"
     finish
 endif
 
+" =====================================
+" BASIC CONFIGURATION
+" =====================================
+
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -14,3 +18,61 @@ set nocompatible
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Basic configuration
+set history=50        " keep 50 lines of command line history
+set ruler             " show the cursor position all the time
+set showcmd           " display incomplete commands
+set incsearch         " do incremental search
+set number            " show number of lines
+set smarttab          " backspacing over indent
+set expandtab         " insert spaces instead of tab character
+
+set tw=79             " max text width
+set colorcolumn=80    " show a line at character 80
+highlight ColorColumn ctermbg=233 guibg=#111111
+
+
+" =====================================
+" GUI CONFIG (avoid .gvimrc)
+" =====================================
+if has('gui_running')
+    colorscheme native
+    set guifont=DejaVu\ Sans\ Mono 9
+    set background=dark
+
+    set cursorline
+    set guioptions-=T
+    set guioptions-=e
+    set scrolloff=3
+else
+    if exists('$TERM') && $TERM != 'linux'
+        set t_Co=256
+	set background=dark
+	colorscheme native256
+    endif
+endif
+
+
+" =====================================
+" CUSTOM FUNCTIONS
+" =====================================
+
+" indent all the buffer with one command (in normal mode)
+function! WholeIndent()
+    let old = line('.')
+    normal(gg=G)
+    execute ':' . old
+endfunc
+
+
+" =====================================
+" KEY BINDINGS
+" =====================================
+
+" Rebind <Leader> key
+let mapleader = ','
