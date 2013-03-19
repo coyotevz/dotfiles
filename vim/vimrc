@@ -25,9 +25,12 @@ set clipboard=unnamed
 
 " Basic configuration
 set history=50        " keep 50 lines of command line history
+set undolevels=70     " keep 70 actions for undo
 set ruler             " show the cursor position all the time
 set showcmd           " display incomplete commands
+set hid               " change buffer - without saving
 set incsearch         " do incremental search
+set ignorecase        " ignore case in search
 set number            " show number of lines
 set smarttab          " backspacing over indent
 set expandtab         " insert spaces instead of tab character
