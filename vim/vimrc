@@ -42,7 +42,7 @@ highlight ColorColumn ctermbg=233 guibg=#111111
 " =====================================
 if has('gui_running')
     colorscheme native
-    set guifont=DejaVu\ Sans\ Mono 9
+    set guifont=DejaVu\ Sans\ Mono\ 9
     set background=dark
 
     set cursorline
