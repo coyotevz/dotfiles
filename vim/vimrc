@@ -1,1 +1,16 @@
 " My vim configuration file
+
+" When started as "evim", evim.vim will aready have done these settings.
+if v:progname =~? "evim"
+    finish
+endif
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Use Vim settings, rather than Vi settings (much better!)
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Allow backspacing over everything in insert mode
+set backspace=indent,eol,start
