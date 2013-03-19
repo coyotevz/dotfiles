@@ -31,12 +31,19 @@ set showcmd           " display incomplete commands
 set hid               " change buffer - without saving
 set incsearch         " do incremental search
 set ignorecase        " ignore case in search
+set smartcase         " disable ignorecase when pattern contains upper letters
 set number            " show number of lines
-set smarttab          " backspacing over indent
-set expandtab         " insert spaces instead of tab character
 
 set tw=79             " max text width
 set colorcolumn=80    " show a line at character 80
+
+" Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab         " insert spaces instead of tab character
+set smarttab          " backspacing over indent
 
 
 " =====================================
