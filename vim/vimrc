@@ -34,7 +34,6 @@ set expandtab         " insert spaces instead of tab character
 
 set tw=79             " max text width
 set colorcolumn=80    " show a line at character 80
-highlight ColorColumn ctermbg=233 guibg=#111111
 
 
 " =====================================
@@ -76,3 +75,9 @@ endfunc
 
 " Rebind <Leader> key
 let mapleader = ','
+
+
+" =====================================
+" CUSTOM
+" =====================================
+highlight ColorColumn ctermbg=233 guibg=#111111
