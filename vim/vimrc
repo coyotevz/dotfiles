@@ -158,6 +158,10 @@ map <silent><A-h> :bp<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" easier increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 " alternative to <ESC>
 inoremap <C-CR> <Esc>
 " inoremap <C-i> <Esc>
