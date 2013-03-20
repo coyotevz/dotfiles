@@ -3,5 +3,5 @@
 # Plugins
 
 - [snipmate](http://github.com/garbas/vim-snipmate)
-- zencoding
-- supertab
+- [zencoding](http://github.com/mattn/zencoding-vim)
+- [supertab](http://github.com/ervandew/supertab)
