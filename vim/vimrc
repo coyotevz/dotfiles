@@ -72,6 +72,12 @@ else
     endif
 endif
 
+" Switch syntax highlighting on, when the terminal has colors
+if &t_Co > 2 || has('gui_running')
+    syntax on
+    set hlsearch
+endif
+
 
 " =====================================
 " CUSTOM FUNCTIONS
@@ -110,6 +116,10 @@ map <c-h> <c-w>h
 " press ``>`` several times.
 vnoremap < <gv
 vnoremap > >gv
+
+" alternative to <ESC>
+inoremap <C-CR> <Esc>
+inoremap <C-i> <Esc>
 
 
 " =====================================
