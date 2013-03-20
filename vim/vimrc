@@ -106,6 +106,7 @@ endfun
 fun! s:SetFileTypePython()
     iab magic #!/use/bin/env python<cr># -*- coding: utf-8-*-<cr><cr><c-o>:call getchar()
     iab enc # -*- coding: utf-8 -*-<cr><cr><c-o>:call getchar()<cr>
+    setlocal iskeyword+=.
 endfun
 
 fun! s:SetFileTypeC()
@@ -114,6 +115,18 @@ endfun
 fun! s:SetFileTypeHTML()
     iab jinja {# vim: ft=html.jinja:sw=2<cr>#}<esc>:filetype detect<cr>kO<esc>O
 endfun
+
+" =====================================
+" LOAD PLUGINS
+" =====================================
+source ~/.vim/bundles.vim
+
+" =====================================
+" PLUGINS CONFIG
+" =====================================
+
+" vundle: use `git` instead of `https` to fetch repos
+let g:vundle_default_git_proto = 'git'
 
 " =====================================
 " KEY BINDINGS
