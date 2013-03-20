@@ -41,7 +41,6 @@ set number            " show number of lines
 
 set tw=79             " max text width
 set colorcolumn=80    " show a line at character 80
-highlight ColorColumn ctermbg=233 guibg=#111111
 
 " Real programmers don't use TABs but spaces
 set tabstop=4
@@ -76,6 +75,7 @@ if &t_Co > 2 || has('gui_running')
     set hlsearch
 endif
 
+highlight ColorColumn ctermbg=233 guibg=#111111
 
 " =====================================
 " CUSTOM FUNCTIONS
