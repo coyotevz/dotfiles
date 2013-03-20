@@ -6,7 +6,9 @@ if v:progname =~? "evim"
 endif
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+if has('autocommand')
+    autocmd! BufWritePost .vimrc source %
+endif
 
 " =====================================
 " GENERAL CONFIGURATION
@@ -39,7 +41,6 @@ set ignorecase        " ignore case in search
 set smartcase         " disable ignorecase when pattern contains upper letters
 set number            " show number of lines
 
-set tw=79             " max text width
 set colorcolumn=80    " show a line at character 80
 
 " Real programmers don't use TABs but spaces
@@ -137,6 +138,9 @@ noremap <C-n> :nohl<CR>
 " =====================================
 
 if has('autocmd')   " only do this when compiled with autocommands.
+
+    " For all text files set 'textwidth' to 79 characters.
+    autocmd FileType text setlocal textwidth=78
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
