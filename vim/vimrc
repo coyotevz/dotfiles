@@ -97,12 +97,23 @@ highlight MatchParen ctermbg=NONE cterm=bold gui=bold guibg=NONE guifg=Red
 " =====================================
 
 " indent all the buffer with one command (in normal mode)
-function! WholeIndent()
+fun! s:WholeIndent()
     let old = line('.')
     normal(gg=G)
     execute ':' . old
-endfunc
+endfun
 
+fun! s:SetFileTypePython()
+    iab magic #!/use/bin/env python<cr># -*- coding: utf-8-*-<cr><cr><c-o>:call getchar()
+    iab enc # -*- coding: utf-8 -*-<cr><cr><c-o>:call getchar()<cr>
+endfun
+
+fun! s:SetFileTypeC()
+endfun
+
+fun! s:SetFileTypeHTML()
+    iab jinja {# vim: ft=html.jinja:sw=2<cr>#}<esc>:filetype detect<cr>kO<esc>O
+endfun
 
 " =====================================
 " KEY BINDINGS
@@ -141,6 +152,9 @@ inoremap <C-CR> <Esc>
 " remove hightlight to your last search
 noremap <C-n> :nohl<CR>
 
+" 
+nmap -- :call s:WholeIndent()
+
 " =====================================
 " CUSTOM
 " =====================================
@@ -166,7 +180,9 @@ if has('autocmd')   " only do this when compiled with autocommands.
     " For all text files set 'textwidth' to 79 characters.
     autocmd FileType text setlocal textwidth=78 | setlocal nonumber
     autocmd FileType make setlocal noexpandtab
-
+    autocmd FileType python call s:SetFileTypePython()
+    autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
+    autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
 
     augroup END
 
