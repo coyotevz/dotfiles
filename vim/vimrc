@@ -58,7 +58,6 @@ set smarttab          " backspacing over indent
 if has('gui_running')
     colorscheme native
     set guifont=DejaVu\ Sans\ Mono\ 9
-    set background=dark
 
     set cursorline
     set guioptions-=T
@@ -67,7 +66,6 @@ if has('gui_running')
 else
     if exists('$TERM') && $TERM != 'linux'
         set t_Co=256
-	set background=dark
 	colorscheme native256
     endif
 endif
