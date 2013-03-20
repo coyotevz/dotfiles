@@ -5,12 +5,12 @@ if v:progname =~? "evim"
     finish
 endif
 
-" =====================================
-" BASIC CONFIGURATION
-" =====================================
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
+
+" =====================================
+" GENERAL CONFIGURATION
+" =====================================
 
 " Use Vim settings, rather than Vi settings (much better!)
 " This must be first, because it changes other options as a side effect.
@@ -22,6 +22,11 @@ set backspace=indent,eol,start
 " Better copy & paste
 set pastetoggle=<F2>
 set clipboard=unnamed
+
+" In many terminal emulators the mouse works just fine, thus enable it
+if has('mouse')
+    set mouse=a
+endif
 
 " Basic configuration
 set history=50        " keep 50 lines of command line history
@@ -36,6 +41,7 @@ set number            " show number of lines
 
 set tw=79             " max text width
 set colorcolumn=80    " show a line at character 80
+highlight ColorColumn ctermbg=233 guibg=#111111
 
 " Real programmers don't use TABs but spaces
 set tabstop=4
@@ -86,8 +92,26 @@ endfunc
 " Rebind <Leader> key
 let mapleader = ','
 
+" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
+" so that you can undu CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" Don't use Ex mode, use Q for formatting
+vmap Q gq
+
+" windows navitation
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" easier moving of code blocks
+" Try to go visual mode (v), then select several lines of code here and then
+" press ``>`` several times.
+vnoremap < <gv
+vnoremap > >gv
+
 
 " =====================================
 " CUSTOM
 " =====================================
-highlight ColorColumn ctermbg=233 guibg=#111111
