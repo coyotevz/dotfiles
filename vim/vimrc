@@ -50,6 +50,9 @@ set shiftround
 set expandtab         " insert spaces instead of tab character
 set smarttab          " backspacing over indent
 
+set autoindent        " copy indent from current line wen starting a new line
+set smartindent       " smart autoindenting
+
 
 " =====================================
 " GUI CONFIG (avoid .gvimrc)
@@ -121,7 +124,7 @@ vnoremap > >gv
 
 " alternative to <ESC>
 inoremap <C-CR> <Esc>
-inoremap <C-i> <Esc>
+" inoremap <C-i> <Esc>
 
 " remove hightlight to your last search
 noremap <C-n> :nohl<CR>
