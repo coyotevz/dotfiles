@@ -3,16 +3,16 @@ filetype off        " required!
 
 " setting up vundle - the vmi plugin bundler
 let iCanHazVundle = 1
-let vundle_readme = expand('~/.vim/bundles/vundle/README.md')
+let vundle_readme = expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
     echo "Installing vundle ..."
     echo ""
-    silent !mkdir -p ~/.vim/bundles
-    silent !git clone git://github.com/gmarik/vundle ~/.vim/bundles/vundle
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone git://github.com/gmarik/vundle ~/.vim/bundle/vundle
     let iCanHazVundle = 0
 endif
 
-set rtp+=~/.vim/bundles/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let vundle manage Vundle
@@ -35,7 +35,7 @@ Bundle 'garbas/vim-snipmate'
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/sniptmate-snippets'
+Bundle 'honza/snipmate-snippets'
 
 Bundle 'mattn/zencoding-vim'
 Bundle 'ervandew/supertab'
