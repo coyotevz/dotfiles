@@ -53,7 +53,6 @@ set smarttab          " backspacing over indent
 set autoindent        " copy indent from current line wen starting a new line
 set smartindent       " smart autoindenting
 
-
 " =====================================
 " GUI CONFIG (avoid .gvimrc)
 " =====================================
@@ -129,7 +128,27 @@ inoremap <C-CR> <Esc>
 " remove hightlight to your last search
 noremap <C-n> :nohl<CR>
 
-
 " =====================================
 " CUSTOM
 " =====================================
+
+if has('autocmd')   " only do this when compiled with autocommands.
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+endif
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already
+if !exists(':DiffOrig')
+    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+        \ | wincmd p | diffthis
+endif
