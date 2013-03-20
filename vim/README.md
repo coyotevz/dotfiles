@@ -2,6 +2,6 @@
 
 # Plugins
 
-- [snipmate}(http://github.com/garbas/vim-snipmate)
+- [snipmate](http://github.com/garbas/vim-snipmate)
 - zencoding
 - supertab
