@@ -77,7 +77,11 @@ if &t_Co > 2 || has('gui_running')
     set hlsearch
 endif
 
+" set color to mark 80 characters
 highlight ColorColumn ctermbg=233 guibg=#111111
+
+" set color for matching parents
+highlight MatchParen ctermbg=NONE cterm=bold gui=bold guibg=NONE guifg=Red
 
 " =====================================
 " CUSTOM FUNCTIONS
