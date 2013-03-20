@@ -35,7 +35,7 @@ Bundle 'garbas/vim-snipmate'
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-BUndle 'honza/sniptmate-snippets'
+Bundle 'honza/sniptmate-snippets'
 
 Bundle 'mattn/zencoding-vim'
 Bundle 'ervandew/supertab'
@@ -57,7 +57,7 @@ Bundle 'ervandew/supertab'
 "" ==================================
 
 " At the end install plugins the first time
-if iCanHazVundle = 0
+if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo
     :BundleInstall
