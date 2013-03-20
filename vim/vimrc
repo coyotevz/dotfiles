@@ -43,6 +43,9 @@ set number            " show number of lines
 
 set colorcolumn=80    " show a line at character 80
 
+set laststatus=2      " show statusline
+set wildmenu          " command-line completion
+
 " Real programmers don't use TABs but spaces
 set tabstop=4
 set softtabstop=4
@@ -53,6 +56,11 @@ set smarttab          " backspacing over indent
 
 set autoindent        " copy indent from current line wen starting a new line
 set smartindent       " smart autoindenting
+
+" Setting pum complete options
+set completeopt-=preview
+set completeopt+=menuone
+set completeopt+=longest
 
 " =====================================
 " GUI CONFIG (avoid .gvimrc)
@@ -139,8 +147,6 @@ noremap <C-n> :nohl<CR>
 
 if has('autocmd')   " only do this when compiled with autocommands.
 
-    " For all text files set 'textwidth' to 79 characters.
-    autocmd FileType text setlocal textwidth=78
 
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -151,6 +157,19 @@ if has('autocmd')   " only do this when compiled with autocommands.
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
+
+    " selective settings based on filetype
+    " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    augroup vimrc_filetype_options
+    au!
+
+    " For all text files set 'textwidth' to 79 characters.
+    autocmd FileType text setlocal textwidth=78 | setlocal nonumber
+    autocmd FileType make setlocal noexpandtab
+
+
+    augroup END
+
 endif
 
 " Convenient command to see the difference between the current buffer and the
