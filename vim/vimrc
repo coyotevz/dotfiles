@@ -124,6 +124,7 @@ source ~/.vim/bundles.vim
 " =====================================
 " PLUGINS CONFIG
 " =====================================
+source ~/.vim/plugins_config.vim
 
 " vundle: use `git` instead of `https` to fetch repos
 let g:vundle_default_git_proto = 'git'
