@@ -32,13 +32,14 @@ Bundle 'gmarik/vundle'
 "" ====================================
 
 Bundle 'SirVer/ultisnips'
-
 Bundle 'mattn/zencoding-vim'
 Bundle 'ervandew/supertab'
 
 "" ==================================
 "" FAST EDITING
 "" ==================================
+
+Bundle 'nathanaelkane/vim-indent-guides'
 
 "" ==================================
 "" IDE FEATURES

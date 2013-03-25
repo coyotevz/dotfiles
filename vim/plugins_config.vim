@@ -1,3 +1,8 @@
+"" Plugins configuration
+
+"" ====================================
+"" CODE COMPLETION
+"" ====================================
 
 " vundle: use `git` instead `https` to fetch repos
 let g:vundle_defult_git_proto = 'git'
@@ -13,7 +18,26 @@ let g:user_zen_expandabbr_key = '<C-e>'
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
 
+"" ==================================
+"" FAST EDITING
+"" ==================================
+
+" indent guides
+nmap <F4> :IndentGuidesToggle<cr>
+
+"" ==================================
+"" IDE FEATURES
+"" ==================================
+
+"" ==================================
+"" OTHER UTILITIES
+"" ==================================
+
 " powerline
 if has("gui_running")
     let g:Powerline_symbols = "fancy"
 endif
+
+"" ==================================
+"" PYTHON
+"" ==================================
