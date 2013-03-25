@@ -54,7 +54,9 @@ endif
 let g:html5_rdfa_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 
-" jquery
-" enable jquery systax for all javascript files
-au BufRead,BufNewFile *.js set ft=javascript syntax=jquery
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs'
 
+" xml-plugin
+let xml_tag_completion_map = '<C-l>'
+let xml_jump_string = "`"

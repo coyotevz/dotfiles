@@ -62,8 +62,8 @@ Bundle 'Lokaltog/vim-powerline'
 "" ==================================
 
 Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nono/jquery.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'othree/xml.vim'
 
 " At the end install plugins the first time
 if iCanHazVundle == 0
