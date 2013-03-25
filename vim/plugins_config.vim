@@ -1,11 +1,11 @@
 "" Plugins configuration
 
+" vundle: use `git` instead `https` to fetch repos
+let g:vundle_defult_git_proto = 'git'
+
 "" ====================================
 "" CODE COMPLETION
 "" ====================================
-
-" vundle: use `git` instead `https` to fetch repos
-let g:vundle_defult_git_proto = 'git'
 
 " ultisnips config
 let g:UltiSnipsUsePythonVersion = 2
