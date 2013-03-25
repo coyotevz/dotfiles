@@ -45,6 +45,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "" IDE FEATURES
 "" ==================================
 
+Bundle 'scrooloose/nerdtree'
+
 "" ==================================
 "" OTHER UTILITIES
 "" ==================================

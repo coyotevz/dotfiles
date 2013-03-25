@@ -29,6 +29,10 @@ nmap <F4> :IndentGuidesToggle<cr>
 "" IDE FEATURES
 "" ==================================
 
+" nerdtree
+let NERDTreeIgnore = ['\~$', '\.pyc$', '\.pyo$', '\.swp$']
+nmap <F6> :NERDTreeToggle<cr>
+
 "" ==================================
 "" OTHER UTILITIES
 "" ==================================
