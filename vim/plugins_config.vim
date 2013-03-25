@@ -45,3 +45,16 @@ endif
 "" ==================================
 "" PYTHON
 "" ==================================
+
+"" ==================================
+"" OTHER LANGUAGES
+"" ==================================
+
+" html5
+let g:html5_rdfa_attributes_complete = 0
+let g:html5_aria_attributes_complete = 0
+
+" jquery
+" enable jquery systax for all javascript files
+au BufRead,BufNewFile *.js set ft=javascript syntax=jquery
+

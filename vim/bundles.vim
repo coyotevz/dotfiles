@@ -57,6 +57,14 @@ Bundle 'Lokaltog/vim-powerline'
 "" PYTHON
 "" ==================================
 
+"" ==================================
+"" OTHER LANGUAGES
+"" ==================================
+
+Bundle 'othree/html5.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nono/jquery.vim'
+
 " At the end install plugins the first time
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
