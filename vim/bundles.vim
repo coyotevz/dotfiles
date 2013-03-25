@@ -31,12 +31,7 @@ Bundle 'gmarik/vundle'
 "" CODE COMPLETION
 "" ====================================
 
-" snipmate dependencies
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
-" snipmate
-Bundle 'garbas/vim-snipmate'
+Bundle 'SirVer/ultisnips'
 
 Bundle 'mattn/zencoding-vim'
 Bundle 'ervandew/supertab'
