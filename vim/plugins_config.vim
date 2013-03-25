@@ -3,7 +3,7 @@
 let g:vundle_defult_git_proto = 'git'
 
 " snip mate config
-g:snips_author = 'Augusto Roccasalva'
+let g:snips_author = 'Augusto Roccasalva'
 
 " zen coding
 let g:user_zen_expandabbr_key = '<C-e>'
