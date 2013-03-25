@@ -12,3 +12,8 @@ let g:user_zen_expandabbr_key = '<C-e>'
 
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
+
+" powerline
+if has("gui_running")
+    let g:Powerline_symbols = "fancy"
+endif

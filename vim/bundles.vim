@@ -48,6 +48,8 @@ Bundle 'ervandew/supertab'
 "" OTHER UTILITIES
 "" ==================================
 
+Bundle 'Lokaltog/vim-powerline'
+
 "" ==================================
 "" PYTHON
 "" ==================================
