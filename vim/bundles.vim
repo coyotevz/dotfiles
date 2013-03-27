@@ -40,6 +40,7 @@ Bundle 'ervandew/supertab'
 "" ==================================
 
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'godlygeek/tabular'
 
 "" ==================================
 "" IDE FEATURES
