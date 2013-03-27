@@ -10,7 +10,7 @@ let g:vundle_defult_git_proto = 'git'
 " ultisnips config
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsEditSplit = 'horizontal'
-let g:UltiSnipsSnippetsDir = "~/.vim-ultisnips"
+let g:UltiSnipsSnippetsDir = "~/.vim_ultisnips"
 
 " zen coding
 let g:user_zen_expandabbr_key = '<C-e>'
