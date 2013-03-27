@@ -54,6 +54,11 @@ endif
 let g:html5_rdfa_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 
+" javascript-vim html indentation
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs'
 

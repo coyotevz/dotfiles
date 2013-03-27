@@ -97,7 +97,7 @@ highlight MatchParen ctermbg=NONE cterm=bold gui=bold guibg=NONE guifg=Red
 " =====================================
 
 " indent all the buffer with one command (in normal mode)
-fun! s:WholeIndent()
+fun! WholeIndent()
     let old = line('.')
     normal(gg=G)
     execute ':' . old
@@ -119,6 +119,7 @@ endfun
 " =====================================
 " LOAD PLUGINS
 " =====================================
+
 source ~/.vim/bundles.vim
 
 " =====================================
@@ -171,7 +172,7 @@ inoremap <C-CR> <Esc>
 noremap <C-n> :nohl<CR>
 
 " 
-nmap -- :call s:WholeIndent()
+nmap -- :call WholeIndent()<CR>
 
 " =====================================
 " CUSTOM
@@ -201,6 +202,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
     autocmd FileType python call s:SetFileTypePython()
     autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
     autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
+    autocmd FileType javascript setlocal ts=2 sw=2 sts=2
 
     augroup END
 
