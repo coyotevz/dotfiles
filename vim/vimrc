@@ -66,6 +66,17 @@ set completeopt-=preview
 set completeopt+=menuone
 set completeopt+=longest
 
+" Move backup files to ~/.vim_sessions
+set backupdir=~/.vim_sessions
+set dir=~/.vim_sessions
+
+" Turn off annoying swapfiles
+set noswapfile
+
+" Set persistent undo (v7.3 only)
+set undodir=~/.vim_undodir
+set undofile
+
 " =====================================
 " GUI CONFIG (avoid .gvimrc)
 " =====================================
