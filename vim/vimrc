@@ -171,6 +171,10 @@ let g:vundle_default_git_proto = 'git'
 " Rebind <Leader> key
 let mapleader = ','
 
+" Copy/Paste to and from Desktop Environment
+noremap <leader>yy "+y
+noremap <leader>pp "+gP
+
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undu CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
