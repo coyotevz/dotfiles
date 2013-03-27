@@ -91,6 +91,8 @@ inoremap <down>  <nop>
 inoremap <right> <nop>
 inoremap <left>  <nop>
 
+" Disable the blinking cursor.
+set gcr=a:blinkon0
 
 " =====================================
 " GUI CONFIG (avoid .gvimrc)
