@@ -49,6 +49,7 @@ set colorcolumn=80    " show a line at character 80
 
 set laststatus=2      " show statusline
 set wildmenu          " command-line completion
+set wildignore=*.dll,*.o,*.pyc,*.pyo,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class
 
 " Real programmers don't use TABs but spaces
 set tabstop=4
