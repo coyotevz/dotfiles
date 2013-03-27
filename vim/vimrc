@@ -30,6 +30,10 @@ if has('mouse')
     set mouse=a
 endif
 
+"Hide mouse pointer while typing
+set mousehide
+set mousemodel=popup
+
 " Basic configuration
 set history=50        " keep 50 lines of command line history
 set undolevels=70     " keep 70 actions for undo
