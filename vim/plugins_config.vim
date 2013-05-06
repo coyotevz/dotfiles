@@ -24,6 +24,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 
 " indent guides
 nmap <F4> :IndentGuidesToggle<cr>
+let g:EasyMotion_leader_key = '<Leader>'
 
 "" ==================================
 "" IDE FEATURES
