@@ -79,18 +79,18 @@ set undodir=~/.vim_undodir
 set undofile
 
 " force to use h, j, k, l keys (disable when you are trained)
-noremap <up>    <nop>
-noremap <down>  <nop>
-noremap <right> <nop>
-noremap <left>  <nop>
-vnoremap <up>    <nop>
-vnoremap <down>  <nop>
-vnoremap <right> <nop>
-vnoremap <left>  <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <right> <nop>
-inoremap <left>  <nop>
+"noremap <up>    <nop>
+"noremap <down>  <nop>
+"noremap <right> <nop>
+"noremap <left>  <nop>
+"vnoremap <up>    <nop>
+"vnoremap <down>  <nop>
+"vnoremap <right> <nop>
+"vnoremap <left>  <nop>
+"inoremap <up>    <nop>
+"inoremap <down>  <nop>
+"inoremap <right> <nop>
+"inoremap <left>  <nop>
 
 " Disable the blinking cursor.
 set gcr=a:blinkon0
