@@ -42,6 +42,7 @@ Bundle 'ervandew/supertab'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
 
 "" ==================================
 "" IDE FEATURES
@@ -67,6 +68,7 @@ Bundle 'othree/html5.vim'
 Bundle 'coyotevz/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'othree/xml.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
 
 " At the end install plugins the first time
 if iCanHazVundle == 0
