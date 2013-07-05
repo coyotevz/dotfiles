@@ -148,7 +148,11 @@ fun! s:SetFileTypeC()
 endfun
 
 fun! s:SetFileTypeHTML()
-    iab jinja {# vim: ft=html.jinja:sw=2<cr>#}<esc>:filetype detect<cr>kO<esc>O
+    iab jinja {# vim: ft=jinja:sw=2<cr>#}<esc>:filetype detect<cr>kO<esc>O
+endfun
+
+fun! s:SetFileTypeJinja()
+    runtime ftplugin/xml.vim " load xml plugin
 endfun
 
 " =====================================
@@ -241,6 +245,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
     autocmd FileType python call s:SetFileTypePython()
     autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
     autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
+    autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
     autocmd FileType javascript setlocal ts=2 sw=2 sts=2
 
     augroup END
