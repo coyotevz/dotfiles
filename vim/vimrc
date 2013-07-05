@@ -240,7 +240,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
     au!
 
     " For all text files set 'textwidth' to 79 characters.
-    autocmd FileType text setlocal textwidth=78 | setlocal nonumber
+    autocmd FileType text,rst setlocal textwidth=79 | setlocal nonumber
     autocmd FileType make setlocal noexpandtab
     autocmd FileType python call s:SetFileTypePython()
     autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
