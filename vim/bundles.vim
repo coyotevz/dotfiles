@@ -32,7 +32,7 @@ Bundle 'gmarik/vundle'
 "" ====================================
 
 Bundle 'SirVer/ultisnips'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
 
 "" ==================================
@@ -42,6 +42,7 @@ Bundle 'ervandew/supertab'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
 
 "" ==================================
 "" IDE FEATURES
@@ -54,6 +55,7 @@ Bundle 'scrooloose/nerdtree'
 "" ==================================
 
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'justincampbell/vim-eighties'
 
 "" ==================================
 "" PYTHON
@@ -69,6 +71,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'othree/xml.vim'
 "Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'lepture/vim-jinja'
+Bundle 'vim-script/gtk-vim-syntax'
 
 " At the end install plugins the first time
 if iCanHazVundle == 0
