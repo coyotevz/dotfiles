@@ -18,6 +18,14 @@ let g:user_zen_expandabbr_key = '<C-e>'
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
 
+" Sytastic
+let g:syntastic_check_on_wq=0
+let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'passive' }
+nmap <F2> :SyntasticReset<cr>
+nmap <F3> :SyntasticCheck<cr>
+nmap <F5> :SyntasticToggleMode<cr>
+
 "" ==================================
 "" FAST EDITING
 "" ==================================

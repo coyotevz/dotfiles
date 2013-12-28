@@ -28,12 +28,13 @@ Bundle 'gmarik/vundle'
 " NOTE: comments after Bundle command are not allowed.
 
 "" ====================================
-"" CODE COMPLETION
+"" CODE COMPLETION / CHECKERS
 "" ====================================
 
 Bundle 'SirVer/ultisnips'
 Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/Syntastic'
 
 "" ==================================
 "" FAST EDITING
@@ -71,7 +72,8 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'othree/xml.vim'
 "Bundle 'Glench/Vim-Jinja2-Syntax'
 Bundle 'lepture/vim-jinja'
-Bundle 'vim-script/gtk-vim-syntax'
+Bundle 'vim-scripts/gtk-vim-syntax'
+Bundle 'vim-scripts/webkitgtk'
 
 " At the end install plugins the first time
 if iCanHazVundle == 0
