@@ -100,7 +100,7 @@ set gcr=a:blinkon0
 " =====================================
 if has('gui_running')
     colorscheme native
-    set guifont=DejaVu\ Sans\ Mono\ 9
+    set guifont=DejaVu\ Sans\ Mono\ 10
 
     set cursorline
     set guioptions-=T
