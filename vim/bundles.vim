@@ -32,6 +32,7 @@ Bundle 'gmarik/vundle'
 "" ====================================
 
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'mattn/emmet-vim'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/Syntastic'
@@ -71,7 +72,8 @@ Bundle 'coyotevz/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'othree/xml.vim'
 "Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'lepture/vim-jinja'
+"Bundle 'lepture/vim-jinja'
+Bundle 'mitsuhiko/vim-jinja'
 Bundle 'vim-scripts/gtk-vim-syntax'
 Bundle 'vim-scripts/webkitgtk'
 

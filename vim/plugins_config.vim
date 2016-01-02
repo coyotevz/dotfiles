@@ -74,3 +74,4 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs'
 " xml-plugin
 let xml_tag_completion_map = '<C-l>'
 let xml_jump_string = "`"
+let xml_warn_on_duplicate_mapping = 1
