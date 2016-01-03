@@ -57,11 +57,14 @@ Bundle 'scrooloose/nerdtree'
 "" ==================================
 
 Bundle 'Lokaltog/vim-powerline'
+"Bundle 'bling/vim-airline'
 Bundle 'justincampbell/vim-eighties'
 
 "" ==================================
 "" PYTHON
 "" ==================================
+
+Bundle 'jmcantrell/vim-virtualenv'
 
 "" ==================================
 "" OTHER LANGUAGES
