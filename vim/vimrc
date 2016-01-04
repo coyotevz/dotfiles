@@ -22,7 +22,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 " Better copy & paste
-set pastetoggle=<F2>
+set pastetoggle=<F2>    "Toggle paste mode
 set clipboard=unnamed
 
 " In many terminal emulators the mouse works just fine, thus enable it
