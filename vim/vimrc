@@ -167,9 +167,6 @@ source ~/.vim/plugins.vim
 " =====================================
 source ~/.vim/plugins_config.vim
 
-" vundle: use `git` instead of `https` to fetch repos
-let g:vundle_default_git_proto = 'git'
-
 " =====================================
 " KEY BINDINGS
 " =====================================
