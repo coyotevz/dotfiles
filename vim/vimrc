@@ -67,7 +67,8 @@ set completeopt-=preview
 set completeopt+=menuone
 set completeopt+=longest
 
-" Move backup files to ~/.vim_sessions
+
+" Move backup files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
@@ -276,4 +277,10 @@ endif
 if !exists(':DiffOrig')
     command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
                 \ | wincmd p | diffthis
+endif
+
+
+" Load local config if available
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
 endif
