@@ -36,7 +36,7 @@ let g:airline_theme = "powerlineish"
 let g:airline_powerline_fonts=1
 let g:airline_detect_modified=1
 
-let g:airline_extensions = ['branch', 'tabline', 'whitespace']
+let g:airline_extensions = ['branch', 'tabline', 'whitespace', 'virtualenv']
 
 
 if !exists('g:airline_symbols')
@@ -55,7 +55,11 @@ if has('gui_running')
 endif
 
 
-" othree/html5
+"" jmcantrell/vim-virtualenv
+let g:virtualenv_auto_activate = 1
+
+
+"" othree/html5
 let g:html5_rdfa_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 

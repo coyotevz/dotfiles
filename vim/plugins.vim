@@ -56,6 +56,7 @@ Plugin 'justincampbell/vim-eighties'
 "" ~~~~~~
 
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'klen/python-mode'
 
 
 "" Other Languages
