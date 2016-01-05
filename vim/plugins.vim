@@ -41,6 +41,7 @@ Plugin 'tpope/vim-surround'
 "" ~~~~~~~~~~~~
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
 
 
 "" Fancy

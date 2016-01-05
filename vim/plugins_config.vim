@@ -1,24 +1,21 @@
 "" Plugins configuration
 
+"" VundleVim/Vundle.vim
 " vundle: use `git` instead `https` to fetch repos
 let g:vundle_defult_git_proto = 'git'
 
-"" ====================================
-"" CODE COMPLETION
-"" ====================================
-
-" ultisnips config
+"" SirVer/ultisnips
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsEditSplit = 'horizontal'
 let g:UltiSnipsSnippetsDir = "~/.vim_ultisnips"
 
-" zen coding
+"" mattn/emmet-vim
 let g:user_zen_expandabbr_key = '<C-e>'
 
 " supertab
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
 
-" Sytastic
+"" vim-scripts/Syntastic
 let g:syntastic_check_on_wq=0
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'passive' }
@@ -26,76 +23,52 @@ nmap <F2> :SyntasticReset<cr>
 nmap <F3> :SyntasticCheck<cr>
 nmap <F5> :SyntasticToggleMode<cr>
 
-"" ==================================
-"" FAST EDITING
-"" ==================================
-
-" indent guides
+"" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
 let g:EasyMotion_leader_key = '<Leader>'
 
-"" ==================================
-"" IDE FEATURES
-"" ==================================
-
-" nerdtree
+"" scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '\.pyc$', '\.pyo$', '\.swp$']
 nmap <F6> :NERDTreeToggle<cr>
 
-"" ==================================
-"" OTHER UTILITIES
-"" ==================================
+"" bling/vim-airline
+let g:airline_theme = "powerlineish"
+let g:airline_powerline_fonts=1
+let g:airline_detect_modified=1
 
-" powerline
-if has("gui_running")
-    let g:Powerline_symbols = "fancy"
+let g:airline_extensions = ['branch', 'tabline', 'whitespace']
 
-    "call Pl#Segment#Create('virtualenv', '%{virtualenv#statusline()}')
-    "call Pl#Theme#InsertSegment('virtualenv', 'after', 'mode_indicator')
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
 endif
 
-" airline
-"if has("gui_running")
-"    let g:airline_powerline_fonts=1
-"
-"    if !exists('g:airline_symbols')
-"        let g:airline_symbols = {}
-"    endif
-"
-"    " powerline symbols
-"    let g:airline_left_sep = ''
-"    let g:airline_left_alt_sep = ''
-"    let g:airline_right_sep = ''
-"    let g:airline_right_alt_sep = ''
-"    let g:airline_symbols.branch = ''
-"    let g:airline_symbols.readonly = ''
-"    let g:airline_symbols.linenr = ''
-"
-"    let g:airline_extensions = ['branch', 'tabline']
-"
-"endif
+if has('gui_running')
+    "FIXME Old powerline-symbols
+    let g:airline_left_sep = '⮀'
+    let g:airline_left_alt_sep = '⮁'
+    let g:airline_right_sep = '⮂'
+    let g:airline_right_alt_sep = '⮃'
+    let g:airline_symbols.branch = '⭠'
+    let g:airline_symbols.readonly = '⭤'
+    let g:airline_symbols.linenr = '⭡'
+endif
 
-"" ==================================
-"" PYTHON
-"" ==================================
 
-"" ==================================
-"" OTHER LANGUAGES
-"" ==================================
-
-" html5
+" othree/html5
 let g:html5_rdfa_attributes_complete = 0
 let g:html5_aria_attributes_complete = 0
 
-" javascript-vim html indentation
+"" pangloss/vim-javascript
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-" javascript-libraries-syntax
-let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs'
 
-" xml-plugin
+"" othree/xml
 let xml_tag_completion_map = '<C-l>'
 let xml_jump_string = "`"
 let xml_warn_on_duplicate_mapping = 1
+
+" javascript-libraries-syntax
+let g:used_javascript_libs = 'jquery,underscore,backbone,requirejs'
