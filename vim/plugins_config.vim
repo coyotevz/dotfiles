@@ -23,6 +23,10 @@ nmap <F2> :SyntasticReset<cr>
 nmap <F3> :SyntasticCheck<cr>
 nmap <F5> :SyntasticToggleMode<cr>
 
+" enable checkers
+let g:syntastic_scss_checkers = ["scss_lint"]  "Install ruby-scss_lint
+let g:syntastic_javascript_checkers = ["jshint"] "Install nodejs-jshint
+
 "" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
 let g:EasyMotion_leader_key = '<Leader>'
@@ -33,25 +37,22 @@ nmap <F6> :NERDTreeToggle<cr>
 
 "" bling/vim-airline
 let g:airline_theme = "powerlineish"
+
+" next line + guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9 do the trick
 let g:airline_powerline_fonts=1
 let g:airline_detect_modified=1
 
-let g:airline_extensions = ['branch', 'tabline', 'whitespace']
+"let g:airline_extensions = ['branch', 'tabline', 'whitespace', 'syntastic']
+"let g:airline#extensions#disable_rtp_load = 1
+"let g:airline#extensions#virtualenv#enabled = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
 if has('gui_running')
-    "FIXME Old powerline-symbols
-    let g:airline_left_sep = '⮀'
-    let g:airline_left_alt_sep = '⮁'
-    let g:airline_right_sep = '⮂'
-    let g:airline_right_alt_sep = '⮃'
-    let g:airline_symbols.branch = '⭠'
-    let g:airline_symbols.readonly = '⭤'
-    let g:airline_symbols.linenr = '⭡'
 
+    " NOTE: let next lines to see powerline fonts loaded symbols
     " powerline symbols
     "let g:airline_left_sep = ''
     "let g:airline_left_alt_sep = ''
