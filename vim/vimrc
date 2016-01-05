@@ -110,7 +110,7 @@ if has('gui_running')
 else
     if exists('$TERM') && $TERM != 'linux'
         set t_Co=256
-	colorscheme native256
+        colorscheme native256
     endif
 endif
 
@@ -125,12 +125,6 @@ highlight ColorColumn ctermbg=233 guibg=#111111
 
 " set color for matching parents
 highlight MatchParen ctermbg=NONE cterm=bold gui=bold guibg=NONE guifg=Red
-
-" Highlight long comments and trailing whitespace.
-highlight ExtraWhitespace ctermbg=red guibg=red
-let a = matchadd('ExtraWhitespace', '\s\+$')
-highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
 
 " =====================================
 " CUSTOM FUNCTIONS
@@ -220,7 +214,7 @@ inoremap <C-CR> <Esc>
 " remove hightlight to your last search
 noremap <C-n> :nohl<CR>
 
-" 
+"
 nmap -- :call WholeIndent()<CR>
 
 " =====================================
@@ -228,31 +222,49 @@ nmap -- :call WholeIndent()<CR>
 " =====================================
 
 if has('autocmd')   " only do this when compiled with autocommands.
+    augroup MyAutoCommands
 
+        " Clear the auto command group se we don't define ti multiple times
+        autocmd!
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-    autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        " Also don't do it when the mark is in the first line, that is the default
+        " position when opening a file.
+        autocmd BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
 
-    " selective settings based on filetype
-    " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    augroup vimrc_filetype_options
-    au!
+        " Fix trailing whitepace in my most used programming languages
+        autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,*.js,*.html
+                    \ silent! :StripTrailingWhiteSpace
 
-    " For all text files set 'textwidth' to 79 characters.
-    autocmd FileType text,rst setlocal textwidth=79 | setlocal nonumber
-    autocmd FileType make setlocal noexpandtab
-    autocmd FileType python call s:SetFileTypePython()
-    autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
-    autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
-    "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
-    autocmd FileType javascript setlocal ts=2 sw=2 sts=2
+        " Help mode bindings
+        " ~~~~~~~~~~~~~~~~~~
+        " <enter> to follow tag, <bs> to go back, and q to quit.
+        autocmd FileType help nnoremap <buffer><cr> <c-]>
+        autocmd FileType help nnoremap <buffer><bs> <c-T>
+        autocmd FileType help nnoremap <buffer>q :q<CR>
+
+        " selective settings based on filetype
+        " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        " For all text files set 'textwidth' to 79 characters.
+        autocmd FileType text,rst setlocal textwidth=79 | setlocal nonumber
+        autocmd FileType make setlocal noexpandtab
+        autocmd FileType python call s:SetFileTypePython()
+        autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
+        autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
+        "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
+        autocmd FileType javascript setlocal ts=2 sw=2 sts=2
+
+        " Fix accidental indentation in html files
+        autocmd FileType html setlocal indentkeys-=*<Return>
+
+        " Resize splits when the window is resized
+        autocmd VimResized * :wincmd =
 
     augroup END
 
@@ -263,5 +275,5 @@ endif
 " Only define it when not defined already
 if !exists(':DiffOrig')
     command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
+                \ | wincmd p | diffthis
 endif
