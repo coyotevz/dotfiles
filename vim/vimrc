@@ -68,14 +68,14 @@ set completeopt+=menuone
 set completeopt+=longest
 
 " Move backup files to ~/.vim_sessions
-set backupdir=~/.vim_sessions
-set dir=~/.vim_sessions
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
 
 " Turn off annoying swapfiles
 set noswapfile
 
 " Set persistent undo (v7.3 only)
-set undodir=~/.vim_undodir
+set undodir=~/.vim/undodir
 set undofile
 
 " force to use h, j, k, l keys (disable when you are trained)
@@ -126,6 +126,12 @@ highlight ColorColumn ctermbg=233 guibg=#111111
 " set color for matching parents
 highlight MatchParen ctermbg=NONE cterm=bold gui=bold guibg=NONE guifg=Red
 
+" Highlight long comments and trailing whitespace.
+highlight ExtraWhitespace ctermbg=red guibg=red
+let a = matchadd('ExtraWhitespace', '\s\+$')
+highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+let b = matchadd('OverLength', '\(^\(\s\)\{-}\(*\|//\|/\*\)\{1}\(.\)*\(\%81v\)\)\@<=\(.\)\{1,}$')
+
 " =====================================
 " CUSTOM FUNCTIONS
 " =====================================
@@ -159,7 +165,7 @@ endfun
 " LOAD PLUGINS
 " =====================================
 
-source ~/.vim/bundles.vim
+source ~/.vim/plugins.vim
 
 " =====================================
 " PLUGINS CONFIG
