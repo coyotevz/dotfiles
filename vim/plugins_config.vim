@@ -13,7 +13,7 @@ let g:UltiSnipsSnippetsDir = "~/.vim_ultisnips"
 let g:user_zen_expandabbr_key = '<C-e>'
 
 " supertab
-"let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = 'context'
 
 "" vim-scripts/Syntastic
 let g:syntastic_check_on_wq=0

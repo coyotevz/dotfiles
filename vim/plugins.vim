@@ -25,6 +25,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/Syntastic'
 
 
@@ -48,6 +49,7 @@ Plugin 'tpope/vim-fugitive'
 "" ~~~~~
 
 Plugin 'bling/vim-airline'
+Plugin 'justincampbell/vim-eighties'
 
 
 "" Python
