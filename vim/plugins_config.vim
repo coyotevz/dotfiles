@@ -25,7 +25,7 @@ nmap <F5> :SyntasticToggleMode<cr>
 
 " enable checkers
 let g:syntastic_scss_checkers = ["scss_lint"]  "Install ruby-scss_lint
-let g:syntastic_javascript_checkers = ["jshint"] "Install nodejs-jshint
+let g:syntastic_javascript_checkers = ["jslint"] "Install nodejs-jshint
 
 "" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
@@ -43,8 +43,12 @@ let g:airline_powerline_fonts=1
 let g:airline_detect_modified=1
 
 "let g:airline_extensions = ['branch', 'tabline', 'whitespace', 'syntastic']
-"let g:airline#extensions#disable_rtp_load = 1
-"let g:airline#extensions#virtualenv#enabled = 0
+let g:airline#extensions#disable_rtp_load = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
