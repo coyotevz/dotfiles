@@ -25,7 +25,7 @@ nmap <F5> :SyntasticToggleMode<cr>
 
 " enable checkers
 let g:syntastic_scss_checkers = ["scss_lint"]  "Install ruby-scss_lint
-let g:syntastic_javascript_checkers = ["jslint"] "Install nodejs-jshint
+let g:syntastic_javascript_checkers = ["jshint"] "Install nodejs-jshint
 
 "" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
