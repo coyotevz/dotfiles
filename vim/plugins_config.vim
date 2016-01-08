@@ -18,14 +18,14 @@ let g:SuperTabDefaultCompletionType = 'context'
 "" vim-scripts/Syntastic
 let g:syntastic_check_on_wq=0
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['python', 'javascript'] }
 nmap <F2> :SyntasticReset<cr>
 nmap <F3> :SyntasticCheck<cr>
 nmap <F5> :SyntasticToggleMode<cr>
 
 " enable checkers
 let g:syntastic_scss_checkers = ["scss_lint"]  "Install ruby-scss_lint
-let g:syntastic_javascript_checkers = ["jshint"] "Install nodejs-jshint
+let g:syntastic_javascript_checkers = ["gjslint"] "Install nodejs-jshint
 
 "" nathanaelkane/vim-indent-guides
 nmap <F4> :IndentGuidesToggle<cr>
