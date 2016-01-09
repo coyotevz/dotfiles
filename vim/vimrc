@@ -140,8 +140,6 @@ endfun
 
 fun! s:SetFileTypePython()
     setl nosmartindent " based on http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line
-    iab magic #!/use/bin/env python<cr># -*- coding: utf-8-*-<cr><cr><c-o>:call getchar()<cr>
-    iab enc # -*- coding: utf-8 -*-<cr><cr><c-o>:call getchar()<cr>
     setlocal iskeyword+=.
 endfun
 
