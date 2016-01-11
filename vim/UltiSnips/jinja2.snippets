@@ -1,0 +1,23 @@
+priority -40
+
+snippet block "block" b
+{% block ${1:name} %}
+	$2
+{% endblock %}
+endsnippet
+
+snippet iblock "inline block" i
+{% block ${1:name} %}$2{% endif %}
+endsnippet
+
+snippet { "variable" i
+{{ $1 }}
+endsnippet
+
+snippet iif "inline if" i
+{% if ${1:expr} %}$2{% endif %}
+endsnippet
+
+snippet iife "inline if/else" i
+{% if ${1:expr} %}$2{% else %}$3{% endif %}
+endsnippet
