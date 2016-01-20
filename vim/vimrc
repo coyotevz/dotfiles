@@ -22,7 +22,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 " Better copy & paste
-set pastetoggle=<F2>
+set pastetoggle=<F2>    "Toggle paste mode
 set clipboard=unnamed
 
 " In many terminal emulators the mouse works just fine, thus enable it
@@ -67,15 +67,16 @@ set completeopt-=preview
 set completeopt+=menuone
 set completeopt+=longest
 
-" Move backup files to ~/.vim_sessions
-set backupdir=~/.vim_sessions
-set dir=~/.vim_sessions
+
+" Move backup files to ~/.vim/sessions
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
 
 " Turn off annoying swapfiles
 set noswapfile
 
 " Set persistent undo (v7.3 only)
-set undodir=~/.vim_undodir
+set undodir=~/.vim/undodir
 set undofile
 
 " force to use h, j, k, l keys (disable when you are trained)
@@ -110,7 +111,7 @@ if has('gui_running')
 else
     if exists('$TERM') && $TERM != 'linux'
         set t_Co=256
-	colorscheme native256
+        colorscheme native256
     endif
 endif
 
@@ -159,15 +160,12 @@ endfun
 " LOAD PLUGINS
 " =====================================
 
-source ~/.vim/bundles.vim
+source ~/.vim/plugins.vim
 
 " =====================================
 " PLUGINS CONFIG
 " =====================================
 source ~/.vim/plugins_config.vim
-
-" vundle: use `git` instead of `https` to fetch repos
-let g:vundle_default_git_proto = 'git'
 
 " =====================================
 " KEY BINDINGS
@@ -214,7 +212,7 @@ inoremap <C-CR> <Esc>
 " remove hightlight to your last search
 noremap <C-n> :nohl<CR>
 
-" 
+"
 nmap -- :call WholeIndent()<CR>
 
 " =====================================
@@ -222,31 +220,49 @@ nmap -- :call WholeIndent()<CR>
 " =====================================
 
 if has('autocmd')   " only do this when compiled with autocommands.
+    augroup MyAutoCommands
 
+        " Clear the auto command group se we don't define ti multiple times
+        autocmd!
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-    autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+        " When editing a file, always jump to the last known cursor position.
+        " Don't do it when the position is invalid or when inside an event handler
+        " (happens when dropping a file on gvim).
+        " Also don't do it when the mark is in the first line, that is the default
+        " position when opening a file.
+        autocmd BufReadPost *
+                    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+                    \   exe "normal! g`\"" |
+                    \ endif
 
-    " selective settings based on filetype
-    " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    augroup vimrc_filetype_options
-    au!
+        " Fix trailing whitepace in my most used programming languages
+        autocmd BufWritePre *.py,*.coffee,*.rb,*.erb,*.md,*.scss,*.vim,*.js,*.html
+                    \ silent! :StripTrailingWhiteSpace
 
-    " For all text files set 'textwidth' to 79 characters.
-    autocmd FileType text,rst setlocal textwidth=79 | setlocal nonumber
-    autocmd FileType make setlocal noexpandtab
-    autocmd FileType python call s:SetFileTypePython()
-    autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
-    autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
-    "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
-    autocmd FileType javascript setlocal ts=2 sw=2 sts=2
+        " Help mode bindings
+        " ~~~~~~~~~~~~~~~~~~
+        " <enter> to follow tag, <bs> to go back, and q to quit.
+        autocmd FileType help nnoremap <buffer><cr> <c-]>
+        autocmd FileType help nnoremap <buffer><bs> <c-T>
+        autocmd FileType help nnoremap <buffer>q :q<CR>
+
+        " selective settings based on filetype
+        " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        " For all text files set 'textwidth' to 79 characters.
+        autocmd FileType text,rst setlocal textwidth=79 | setlocal nonumber
+        autocmd FileType make setlocal noexpandtab
+        autocmd FileType python call s:SetFileTypePython()
+        autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
+        autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
+        "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
+        autocmd FileType javascript setlocal ts=2 sw=2 sts=2
+
+        " Fix accidental indentation in html files
+        autocmd FileType html setlocal indentkeys-=*<Return>
+
+        " Resize splits when the window is resized
+        autocmd VimResized * :wincmd =
 
     augroup END
 
@@ -257,5 +273,11 @@ endif
 " Only define it when not defined already
 if !exists(':DiffOrig')
     command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-        \ | wincmd p | diffthis
+                \ | wincmd p | diffthis
+endif
+
+
+" Load local config if available
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
 endif
