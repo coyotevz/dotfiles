@@ -67,6 +67,7 @@ Plugin 'othree/xml.vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'vim-scripts/gtk-vim-syntax'
 Plugin 'vim-scripts/webkitgtk'
+Plugin 'posva/vim-vue'
 
 
 call vundle#end()
