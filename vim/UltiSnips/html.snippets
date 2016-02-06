@@ -1,0 +1,17 @@
+priority -40
+
+snippet html5 "HTML 5 Skeleton" b
+<!doctype html>
+<html lang="${1:es-ar}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>${2:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${3}
+	</head>
+
+	<body>
+		${0}
+	</body>
+</html>
+endsnippet
