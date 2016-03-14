@@ -18,7 +18,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 "" vim-scripts/Syntastic
 let g:syntastic_check_on_wq=0
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['python', 'javascript'] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript'] }
 nmap <F2> :SyntasticReset<cr>
 nmap <F3> :SyntasticCheck<cr>
 nmap <F5> :SyntasticToggleMode<cr>
