@@ -45,6 +45,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/gtk-vim-syntax'
 
 "" ==================================
 "" IDE FEATURES
