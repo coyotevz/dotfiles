@@ -10,7 +10,7 @@ let g:UltiSnipsEditSplit = 'horizontal'
 let g:UltiSnipsSnippetDirectories = ["UltiSnips"]
 
 "" mattn/emmet-vim
-let g:user_zen_expandabbr_key = '<C-e>'
+let g:user_zen_expandabbr_key = '<C-E>'
 
 " supertab
 let g:SuperTabDefaultCompletionType = 'context'
@@ -34,6 +34,9 @@ let g:EasyMotion_leader_key = '<Leader>'
 "" scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '\.pyc$', '\.pyo$', '\.swp$']
 nmap <F6> :NERDTreeToggle<cr>
+map <c-k> :NERDTreeToggle<cr>
+map <c-i> :NERDTreeFind<cr>
+
 
 "" bling/vim-airline
 let g:airline_theme = "powerlineish"
@@ -82,6 +85,9 @@ else
     let g:airline_symbols.paste = '∥'
     let g:airline_symbols.whitespace = 'Ξ'
 endif
+
+"" justincampbell/vim-eighties
+let g:eighties_enabled = 0  " disabled by the moment
 
 
 "" jmcantrell/vim-virtualenv

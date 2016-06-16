@@ -154,6 +154,9 @@ endfun
 "    runtime ftplugin/xml.vim " load xml plugin
 "endfun
 
+" Enable XML plugin for vue files editing and mantain vue syntax
+au BufNewFile,BufRead *.vue setf html.vue
+
 " =====================================
 " LOAD PLUGINS
 " =====================================
@@ -184,14 +187,14 @@ inoremap <C-U> <C-G>u<C-U>
 vmap Q gq
 
 " windows navitation
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+"map <c-j> <c-w>j
+"map <c-k> <c-w>k
+"map <c-l> <c-w>l
+"map <c-h> <c-w>h
 
 " buffer navigations
-map <silent><A-l> :bn<CR>
-map <silent><A-h> :bp<CR>
+map <silent><c-l> :bn<CR>
+map <silent><c-h> :bp<CR>
 
 " easier moving of code blocks
 " Try to go visual mode (v), then select several lines of code here and then
@@ -223,6 +226,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
         " Clear the auto command group se we don't define ti multiple times
         autocmd!
 
+
         " When editing a file, always jump to the last known cursor position.
         " Don't do it when the position is invalid or when inside an event handler
         " (happens when dropping a file on gvim).
@@ -253,6 +257,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
         autocmd FileType python call s:SetFileTypePython()
         autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
         autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
+        autocmd FileType {vue,html.vue} setlocal ts=2 sw=2 sts=2
         "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
         autocmd FileType javascript setlocal ts=2 sw=2 sts=2
 
@@ -260,7 +265,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
         autocmd FileType html setlocal indentkeys-=*<Return>
 
         " Resize splits when the window is resized
-        autocmd VimResized * :wincmd =
+        "autocmd VimResized * :wincmd =
 
     augroup END
 
