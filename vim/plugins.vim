@@ -51,6 +51,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'justincampbell/vim-eighties'
+Plugin 'blueyed/vim-diminactive'
 
 
 "" Python
