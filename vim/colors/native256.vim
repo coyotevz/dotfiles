@@ -252,7 +252,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Window Elements
     call <SID>X("StatusLine", "ffffff", "8090a0", "bold")
-    call <SID>X("StatusLineNC", "5060700", "a0b0c0", "")
+    call <SID>X("StatusLineNC", "506070", "a0b0c0", "")
     call <SID>X("VertSplit", "a0b0c0", "a0b0c0", "")
     call <SID>X("Folded", "aaaaaa", "555555", "")
 
@@ -261,8 +261,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Title", "ffffff", "", "bold")
 
     " Strings
-    call <SID>X("String", "ed9d132", "", "")
-    call <SID>X("Constant", "ed9d132", "", "")
+    call <SID>X("String", "ed9d13", "", "")
+    call <SID>X("Constant", "ed9d13", "", "")
     call <SID>X("Special", "a89d13", "", "bold")
     call <SID>X("SpecialChar", "ff0000", "", "")
 
