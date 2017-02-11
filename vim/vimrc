@@ -154,6 +154,21 @@ endfun
 "    runtime ftplugin/xml.vim " load xml plugin
 "endfun
 
+fun! HtmlEscape()
+    silent s/&/\&amp;/eg
+    silent s/</\&lt;/eg
+    silent s/>/\&gt;/eg
+endfun
+
+fun! HtmlUnescape()
+    silent s/&lt;/</eg
+    silent s/&gt;/>/eg
+    silent s/&amp;/\&/eg
+endfun
+
+map <silent> <Leader>he :call HtmlEscape()<CR>
+map <silent> <Leader>hu :call HtmlUnescape()<CR>
+
 " Enable XML plugin for vue files editing and mantain vue syntax
 au BufNewFile,BufRead *.vue setf html.vue
 
@@ -257,7 +272,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
         autocmd FileType python call s:SetFileTypePython()
         autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
         autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
-        autocmd FileType {vue,html.vue} setlocal ts=2 sw=2 sts=2
+        autocmd FileType {vue,html.vue,scss} setlocal ts=2 sw=2 sts=2
         "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
         autocmd FileType javascript setlocal ts=2 sw=2 sts=2
 
