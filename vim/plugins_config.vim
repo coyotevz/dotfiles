@@ -42,7 +42,7 @@ map <c-i> :NERDTreeFind<cr>
 let g:airline_theme = "powerlineish"
 
 " next line + guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9 do the trick
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_detect_modified=1
 
 "let g:airline_extensions = ['branch', 'tabline', 'whitespace', 'syntastic']
@@ -55,34 +55,14 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
-endif
 
-if has('gui_running')
-
-    " NOTE: let next lines to see powerline fonts loaded symbols
-    " powerline symbols
-    "let g:airline_left_sep = ''
-    "let g:airline_left_alt_sep = ''
-    "let g:airline_right_sep = ''
-    "let g:airline_right_alt_sep = ''
-    "let g:airline_symbols.branch = ''
-    "let g:airline_symbols.readonly = ''
-    "let g:airline_symbols.linenr = ''
-
-else
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_left_sep = '▶'
-    let g:airline_right_sep = '«'
-    let g:airline_right_sep = '◀'
-    let g:airline_symbols.crypt = '🔒'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.linenr = '␤'
-    let g:airline_symbols.linenr = '¶'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'ρ'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.paste = '∥'
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = ''
     let g:airline_symbols.whitespace = 'Ξ'
 endif
 
