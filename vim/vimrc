@@ -170,7 +170,7 @@ map <silent> <Leader>he :call HtmlEscape()<CR>
 map <silent> <Leader>hu :call HtmlUnescape()<CR>
 
 " Enable XML plugin for vue files editing and mantain vue syntax
-au BufNewFile,BufRead *.vue setf html.vue
+"au BufNewFile,BufRead *.vue setf vue.html.javascript.scss
 
 " =====================================
 " LOAD PLUGINS
@@ -272,7 +272,7 @@ if has('autocmd')   " only do this when compiled with autocommands.
         autocmd FileType python call s:SetFileTypePython()
         autocmd FileType {c,cpp} call s:SetFileTypeC() | setlocal ts=2 sw=2 sts=2
         autocmd FileType {html} call s:SetFileTypeHTML() | setlocal ts=2 sw=2 sts=2
-        autocmd FileType {vue,html.vue,scss} setlocal ts=2 sw=2 sts=2
+        autocmd FileType {vue,vue.html.javascript.scss,html.vue,scss} setlocal ts=2 sw=2 sts=2
         "autocmd FileType jinja call s:SetFileTypeJinja() | setlocal ts=2 sw=2 sts=2
         autocmd FileType javascript setlocal ts=2 sw=2 sts=2
 
