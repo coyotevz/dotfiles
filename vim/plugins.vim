@@ -69,6 +69,7 @@ Plugin 'othree/xml.vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'vim-scripts/gtk-vim-syntax'
 Plugin 'vim-scripts/webkitgtk'
+Plugin 'wavded/vim-stylus'
 Plugin 'posva/vim-vue'
 
 

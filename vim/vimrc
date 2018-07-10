@@ -191,8 +191,10 @@ source ~/.vim/plugins_config.vim
 let mapleader = ','
 
 " Copy/Paste to and from Desktop Environment
-noremap <leader>yy "+y
-noremap <leader>pp "+gP
+"noremap <leader>yy "+y
+"noremap <leader>pp "+gP
+vmap <leader>y :w! /tmp/vimtmp<CR>
+nmap <leader>p :r  /tmp/vimtmp<CR>
 
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undu CTRL-U after inserting a line break.
